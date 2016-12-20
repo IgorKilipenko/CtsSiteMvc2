@@ -1,0 +1,394 @@
+﻿/*@import url(https://fonts.googleapis.com/css?family=Marck+Script|Bad+Script|Underdog&subset=latin,cyrillic);*/
+
+
+body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #000;
+    /*background: #999;*/
+    /*font-family: 'pictos';*/
+    /*font-family: 'Underdog', cursive*/
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+.m_navbar {
+    margin: 0px;
+    position: relative;
+    background-color: #221E44;
+    border-color: #7F7AA9;
+    padding: 0px;
+}
+
+.container .container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+
+/*Слой горизонталяное меню-навигация*/
+.horizontal-menu {
+    padding: 0px;
+    font-family: 'Marck Script', cursive;
+    font-size: 16px;
+}
+
+    .horizontal-menu > ul, horizontal-menu > ul > li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .horizontal-menu > ul {
+        /*background: #221E44; /* цвет фона */
+    }
+
+        .horizontal-menu > ul > li {
+            display: inline-block;
+            text-align: center; /* текст горизонтально по центру */
+            /*background: #221E44; /* цвет фона */
+        }
+
+            .horizontal-menu > ul > li a {
+                display: block; /* ссылка растягивается на весь пункт li */
+                padding: 3px 15px;
+            }
+
+/*Слой вертикальное меню*/
+
+
+
+.vertical-menu {
+    padding: 0px;
+}
+
+    .vertical-menu > li {
+        display: block;
+        text-align: center; /* текст горизонтально по центру */
+        /*line-height:34px;*/
+        min-height: 34px;
+        /*box-shadow: 0px 5px 10px 2px rgba(10, 10, 10, 0.5); /* Параметры тени */
+        margin-bottom: 5px;
+        overflow-wrap: break-word;
+        word-wrap:break-word;
+        max-width: 200px;
+        font-family: 'Marck Script', cursive;
+        font-size: 16px;
+        transition:all 0.2s ease-in-out;
+        -webkit-transition:all 0.2s ease-in-out;
+    }
+
+        .vertical-menu > li a {
+            display: block; /* ссылка растягивается на весь пункт li */
+            padding: 2px;
+            
+            transition:all 0.2s ease-in-out;
+            -webkit-transition:all 0.2s ease-in-out;
+        }
+
+        .vertical-menu > li:hover, #category-menu li.selected {
+            /*background: rgb(96,145,172); /* фон пунктов при наведении */
+            box-shadow: 0px 5px 20px 4px rgb(34, 30, 68); /* Параметры тени */
+            
+        }
+
+            .vertical-menu > li a:hover, #category-menu li.selected a {
+                color:rgba(220, 217, 174, 1);
+                
+                transform:scale(1.05);
+                -webkit-transform:scale(1.05);
+            }
+
+
+
+
+.textcontent-simple-list a {
+    color: #000000;
+}
+
+.textcontent-simple-list li:hover {
+    color: #221E44;
+}
+
+/*
+@media (min-width: 768px) {
+    .container-small {
+        width: 600px;
+    }
+
+    .container {
+        width: 860px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container-small {
+        width: 800px;
+    }
+
+    .container {
+        width: 1120px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-small {
+        width: 960px;
+    }
+
+    .container {
+        width: 1400px;
+    }
+}
+
+*/
+
+
+
+@media (min-width: 1400px) {
+    .container {
+        width: 1200px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        width: 1300px;
+    }
+}
+
+@media (min-width: 768px) {
+    .top-logoimg-right.collapse, .vertical-menu.collapse {
+        display: block !important;
+    }
+
+    .nav-container.navbar-inverse {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        border: none !important;
+    }
+
+    .vertical-menu {
+        margin-top: 30px;
+        margin-right: 20px;
+    }
+}
+
+@media(max-width: 768px) {
+    .nav-container.navbar-inverse li {
+        width: 100% !important;
+        max-width: inherit !important;
+    }
+
+    .vertical-menu.collapse {
+        margin: 0 !important;
+    }
+}
+
+
+
+*[jsui-effect] {
+    display: none;
+}
+
+.overlay-text {
+    background-color: rgba(125, 115, 54, 0.83);
+    opacity: 0.95;
+    filter: alpha(opacity=75);
+}
+
+.navbar-right {
+    margin-right: 15px;
+}
+
+
+#m_container {
+    padding-left: 10px;
+    padding-right: 0px;
+    padding-top:20px;
+    text-shadow:0px 1px 5px rgba(101, 104, 113, 0.5), 5px 3px 12px rgba(91, 91, 119, 0.5);
+}
+
+
+#m_container a:hover, #m_container a:active {
+    color:white;
+}
+
+#m_container ul {
+    list-style:disc;
+    padding-left:20px;
+}
+
+.affect {
+    position: fixed;
+    top: 10px;
+}
+
+
+
+@font-face {
+    font-family: 'pictos';
+    src: url('http://web-gate.fr/fonts/websymbols-regular-webfont.ttf');
+    src: url('http://web-gate.fr/fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'), url('http://web-gate.fr/fonts/websymbols-regular-webfont.woff') format('woff'), url('http://web-gate.fr/fonts/websymbols-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.pane-shadows {
+    /*box-shadow*/
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,1), 0px 3px 15px 2px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,1), 0px 3px 15px 2px rgba(0,0,0,1);
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,1), 0px 3px 15px 2px rgba(0,0,0,1);
+}
+
+.pane-border, .nav-container.navbar-inverse {
+    border: 1px solid #5c5c5c;
+    border-top: 1px solid #999;
+    /*border-radius*/
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.pane-background, .nav-container.navbar-inverse {
+    /*background: rgba(0,0,0,0.8);*/
+    background: rgb(34, 30, 68);
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -webkit-repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -moz-repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -ms-repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -o-repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    /*background-size*/
+    -webkit-background-size: 5px 5px;
+    -moz-background-size: 5px 5px;
+    -o-background-size: 5px 5px;
+    background-size: 5px 5px;
+}
+
+.pane {
+    /*box-shadow*/
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,1), 0px 3px 15px 2px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,1), 0px 3px 15px 2px rgba(0,0,0,1);
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,1), 0px 3px 15px 2px rgba(0,0,0,1);
+    border: 1px solid #5c5c5c;
+    border-top: 1px solid #999;
+    /*border-radius*/
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    /*background: rgba(0,0,0,0.8);*/
+    background: rgb(34, 30, 68);
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -webkit-repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -moz-repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -ms-repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -o-repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    /*background-size*/
+    -webkit-background-size: 5px 5px;
+    -moz-background-size: 5px 5px;
+    -o-background-size: 5px 5px;
+    background-size: 5px 5px;
+}
+
+
+h1,
+h2,
+h3,
+H4 {
+    /*font-family: helvetica;*/
+    font-weight: bold;
+    /*background-color: #333;
+    color: rgba(0,0,0,0.3);*/
+    /*background-clip*/
+    /*-webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: rgba(255,255,255,0.3) 1px 1px 1px;*/
+    color: #000;
+    /*font-family: 'Underdog', cursive;*/
+    letter-spacing:-1px;
+}
+
+
+.content-set {
+    padding-bottom: 50px;
+}
+
+.right-content ul{
+    list-style:disc;
+    padding-left:30px;
+    padding-top:5px;
+}
+
+
+fieldset legend {
+    font: bold 15px status-bar;
+}
+
+
+.img-area img {
+    box-shadow: 3px 3px 5px 0px rgba(8, 8, 8, 0.7);
+    border: 1px solid #5c5c5c;
+    border-top: 1px solid #999;
+    /*border-radius*/
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    /*margin:20px;*/
+}
+
+
+
+
+#m_container p:first-letter {
+    font-size: 20px;
+}
+
+
+#m_container .content-set img {
+    height: 160px;
+    width: 230px;
+}
+
+#m_container *[class~="col-sm-3"], #m_container *[class~="col-sm-9"] {
+    padding: 0px;
+}
+
+#m_container a {
+    color:#000000;
+    transition:all 0.3s ease-in-out;
+}
+
+#m_container a:hover{
+    padding:5px;
+    letter-spacing:0.5px;
+}
+
+.glass-pane{
+    border-bottom: 1px solid;
+    border-color: #ccc;
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding:5px;
+}
+.glass-pane:before{
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -webkit-repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -moz-repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -ms-repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    background-image: -o-repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%);
+    /*background-size*/
+    -webkit-background-size: 5px 5px;
+    -moz-background-size: 5px 5px;
+    -o-background-size: 5px 5px;
+    background-size: 5px 5px;
+    content:"";
+}

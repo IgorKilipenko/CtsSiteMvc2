@@ -1,0 +1,28 @@
+﻿
+
+<div class="container horizontal-menu pane-border pane-background" style="-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;">
+    <ul>
+        <li>
+            <a href="/">Главная</a>
+        </li>
+        @*<li>
+            <a href="#">Цены</a>
+        </li>
+        <li>
+            <a href="#">График работы</a>
+        </li>
+        <li>
+            <a href="#">Доставка</a>
+        </li>*@
+        <li>
+            @Html.ActionLink("Контакты", "Контакты", "Home")
+        </li>
+        <li>
+            @*Ajax.ActionLink("Фотогалерея", "ImageGallery", "Home", new AjaxOptions() {  UpdateTargetId = "m_container" })*@
+            @Html.ActionLink("Фотогалерея", "ImageGallery", "Home")
+        </li>
+        <li>
+            <a href="#">Карта сайта</a>
+        </li>
+    </ul>
+</div>

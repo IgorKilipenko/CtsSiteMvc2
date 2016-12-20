@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Отзывы";
+}
+<!-- Put this script tag to the <head> of your page -->
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?117"></script>
+
+<script type="text/javascript">
+  VK.init({apiId: 4735111, onlyWidgets: true});
+</script>
+
+<!-- Put this div tag to the place, where the Comments block will be -->
+<div id="vk_comments"></div>
+<script type="text/javascript">
+VK.Widgets.Comments("vk_comments", {limit: 10, width: "640", attach: "*"});
+</script>
+
+@*
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+            var cssLink = document.createElement("link")
+            cssLink.href = "~/content/socials.css";
+            cssLink.rel = "stylesheet";
+            cssLink.type = "text/css";
+            $("#vkwidget1").contents().find("head").append(cssLink);
+        })
+    </script>
+}*@

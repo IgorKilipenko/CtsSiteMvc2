@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Контакты";
+}
+
+<!--Google maps-->
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<style>
+    .stationInfo {
+        height: 150px;
+        width: 250px;
+    }
+
+</style>
+<!--Google maps-->
+<!--<h2>@ViewBag.Title.</h2>-->
+<h3>@ViewBag.Message</h3>
+
+
+<div style="padding-bottom:20px">
+    <h3>ООО "КранТехСервис"</h3>
+
+    <cite>
+        По укзанным телефонам и адресам электронной почты Вы можете получить подробную информацию об условиях сотрудничества и специальных возможностях.
+    </cite>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <address>
+            <fieldset>
+                <legend>Телефон:</legend>
+                <div>
+                <a href="callto:+73833801218" style="font-size:15px; margin-bottom:10px;">
+                    <span class="glyphicon glyphicon-earphone"></span>
+                    <span style="padding-left:10px">+7‒(383)‒380‒12‒18</span>
+                </a>
+                    </div>
+                <div>
+                    <a href="callto:+79537640653" style="font-size:15px; margin-bottom:10px;">
+                        <span class="glyphicon glyphicon-earphone"></span>
+                        <span style="padding-left:10px">+7‒(953)‒764‒06‒53</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="callto:+73832279249" style="font-size:15px; margin-bottom:10px;">
+                        <span class="glyphicon glyphicon-earphone"></span>
+                        <span style="padding-left:10px">+7‒(383)‒227‒92‒49</span>
+                    </a>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Почта:</legend>
+                <div>
+                <a href="mailto:kts54v@gmail.com?subject=Вопрос: КТС">
+                    <span class="glyphicon glyphicon-envelope" style="font-size:15px; margin-bottom:10px;"></span>
+                    <span style="padding-left:10px">kts54v@gmail.com</span>
+                </a>
+                </div>
+                <div>
+                    <a href="mailto:kts54aa@gmail.com?subject=Вопрос: КТС">
+                        <span class="glyphicon glyphicon-envelope" style="font-size:15px; margin-bottom:10px;"></span>
+                        <span style="padding-left:10px">kts54aa@gmail.com</span>
+                    </a>
+                </div>
+            </fieldset>
+        </address>
+
+        <address>
+            <!--<strong>Отдел продаж:</strong>   <a href="mailto:kts54ev@gmail.com">Евгений Килипенко</a><br />-->
+            <strong>Администрация:</strong> <a href="mailto:kts54ev@gmail.com">Евгений Килипенко</a>
+
+        </address>
+    </div>
+
+
+    <div class="col-sm-6">
+        <div id="googleMap" class="pane-border" style="height: 400px; width:400px;"> </div>
+
+        <br />
+        <address>630041, г.Новосибирск, ул. Экскаваторный 2й переулок, 29</address>
+    </div>
+</div>
+
+<!--Устанавливаем секцию scripts, которая затем будет рендериться на мастер-странице -->
+@section scripts {
+    <script>
+        var myCenter = new google.maps.LatLng(55.026602, 82.799823);
+        var marker;
+        var address = '630000, г.Новосибирск, ул. Экскаваторный 2й переулок 29';
+
+        function initialize() {
+            var mapProp = {
+                center: myCenter,
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+            var marker = new google.maps.Marker({
+                position: myCenter,
+                animation: google.maps.Animation.BOUNCE,
+                title: address
+            });
+
+            marker.setMap(map);
+
+            var infowindow = new google.maps.InfoWindow({
+                content: address
+            });
+
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.open(map, marker);
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+}
+<!--Google maps-->

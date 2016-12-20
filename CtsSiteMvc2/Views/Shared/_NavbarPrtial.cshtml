@@ -1,0 +1,19 @@
+﻿<div class="container m_navbar navbar navbar-inverse navbar-fixed-top pane-background pane-border" style="-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px; font-family: 'Marck Script', cursive; font-size:16px;">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("\tООО \"КранТехСервис\"", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            @*<ul class="nav navbar-nav">
+                <li>@Html.ActionLink("КранТехСервис", "Index", "Home")</li>
+                <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+            </ul>*@
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+</div>

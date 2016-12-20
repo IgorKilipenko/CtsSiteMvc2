@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CtsSiteMvc2.Models.MenuItem>
+
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".vertical-menu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+<ul id="category-menu" class="selected-list vertical-menu collapse">
+
+
+    @foreach (var item in Model)
+    {
+        <li class="pane @(item.IsSelected ? " selected" : "")">
+            @Html.RouteLink(item.Name,
+            new
+            {
+                controller = item.ControllerName,
+                action = item.ActionName,
+            })
+
+            @*Ajax.RouteLink(item.Name, new { controller = item.ControllerName, action = item.ActionName },
+                new AjaxOptions { UpdateTargetId = "m_container", InsertionMode = InsertionMode.Replace }, new { id = "updated-m_container" })
+            *@
+        </li>
+
+    }
+
+</ul>

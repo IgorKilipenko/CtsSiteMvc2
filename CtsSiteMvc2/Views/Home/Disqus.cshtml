@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Отзывы";
+}
+
+@*
+<!-- Put this script tag to the <head> of your page -->
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?117"></script>
+
+<script type="text/javascript">
+  VK.init({apiId: 4735111, onlyWidgets: true});
+</script>
+
+<!-- Put this div tag to the place, where the Comments block will be -->
+<div id="vk_comments"></div>
+<script type="text/javascript">
+VK.Widgets.Comments("vk_comments", {limit: 10, width: "640", attach: "*"});
+</script>
+    *@
+
+<a class="flamp-widget" href="http://novosibirsk.flamp.ru/firm/krantekhservis_ooo_proizvodstvennaya_kompaniya-70000001020206976" data-flamp-widget-type="responsive" data-flamp-widget-count="10" data-flamp-widget-id="70000001020206976" data-flamp-widget-width="100%">Отзывы о нас на Флампе</a>
+<script>!function(d,s){var js,fjs=d.getElementsByTagName(s)[0];js=d.createElement(s);js.async=1;js.src="//widget.flamp.ru/loader.js";fjs.parentNode.insertBefore(js,fjs);}(document,"script");</script>
+
+
+
+@*section scripts{
+    <script>
+
+        $(document).ready(function () {
+            var cssLink = document.createElement("link")
+            cssLink.href = "~/content/socials.css";
+            cssLink.rel = "stylesheet";
+            cssLink.type = "text/css";
+            $("#vkwidget1").contents().find("head").append(cssLink);
+        })
+    </script>
+}*@
