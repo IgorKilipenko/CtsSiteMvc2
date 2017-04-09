@@ -392,3 +392,9 @@ fieldset legend {
     background-size: 5px 5px;
     content:"";
 }
+
+
+.fb-like{
+    height: 20px;
+    overflow: hidden;
+}

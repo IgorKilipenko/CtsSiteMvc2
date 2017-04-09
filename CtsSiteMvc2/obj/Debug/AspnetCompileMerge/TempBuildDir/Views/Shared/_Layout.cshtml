@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    var pathInfo = new
+    {
+        url = HttpContext.Current.Request.Url.AbsoluteUri, // http://localhost:1302/TESTERS/Default6.aspx
+        path = HttpContext.Current.Request.Url.AbsolutePath, // /TESTERS/Default6.aspx
+        host = HttpContext.Current.Request.Url.Host // localhost
+    };
+}
+
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,10 +28,11 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    @*<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>*@
-    <link rel="stylesheet/less" type="text/css" href="~/Content/HeaderLogo/headerStyles.less">
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link href="~/Content/HeaderLogo/headerStyles.min.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Marck+Script|Bad+Script|Underdog&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
 
@@ -54,7 +64,13 @@
             <hr />
             <footer>
                 @*<p>&copy; @DateTime.Now.Year – КранТехСервис</p>*@
-                <div class="fb-like" data-href="http://xn--80aeiaqhwweief4b.xn--p1ai/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                
+                <div class="social">
+                    <div class="fb-like" data-href="@(pathInfo.url)" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                </div>
+                <div class="footer-address">
+                    <address>630041, г.Новосибирск, ул. Экскаваторный 2й переулок, 29</address>
+                </div>
             </footer>
             
             <button type="button" class="btn btn-sm btn-default collapsed" data-toggle="collapse" data-target="#counters" style="position:absolute; right:25px;">M</button>
@@ -76,9 +92,11 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
+
+    <script type="text/javascript" src="~/Scripts/igorkl.js"></script>
     
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script type="text/javascript" src="~/Scripts/igorkl.js"></script>
+    
 
     <script>
 
@@ -126,8 +144,8 @@
                         element.offset().top = originalNavTop;
                         element.css("width", "");
                     }
-
                 }
+
                 $(window).resize(function(){
                     if (element.hasClass("affect")) {
                         element.removeClass("affect");
@@ -205,6 +223,24 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/32209349" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+
+    <!-- uptocall -->
+    <script type="text/javascript">
+    /* init Call Service */
+    var CallSiteId = '589d26bf67fa572dce61ff9277e1f329';
+    var CallBaseUrl = '//uptocall.com';
+    (function() {
+        var lt = document.createElement('script');
+        lt.type ='text/javascript';
+        lt.charset = 'utf-8';
+        lt.async = true;
+        lt.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + CallBaseUrl + '/widget/client.js?rnd='+Math.floor(Math.random(0,1000)*1000);
+        var sc = document.getElementsByTagName('script')[0];
+        if (sc) sc.parentNode.insertBefore(lt, sc);
+        else document.documentElement.firstChild.appendChild(lt);
+    })();
+    </script>
+    <!-- /uptocall -->
 
 </body>
 </html>

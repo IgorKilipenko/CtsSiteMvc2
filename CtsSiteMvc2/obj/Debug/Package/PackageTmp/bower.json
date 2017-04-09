@@ -1,0 +1,19 @@
+{
+  "name": "CtsSiteMvc2",
+  "version": "1.0.0",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.4",
+    "greensock-js": "~1.10.2"
+  }
+}

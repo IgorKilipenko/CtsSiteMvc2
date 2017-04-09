@@ -1,0 +1,150 @@
+﻿
+/*#region Переменные css модуля*/
+@menu-color:rgba(220, 217, 174, 0.7);
+@menu-hover-color:rgba(220, 217, 174, 1);
+@header-height:190px;
+@main-logo-height:160px;
+/*#endregion*/
+
+/*Слой контейнер логотипов сайта*/
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a{
+    color:@menu-color;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:active, .navbar-inverse .navbar-nav > li > a:focus{
+    color:@menu-hover-color;
+    text-decoration:none;
+}
+
+.navbar > .container .navbar-brand{
+    margin-left:0;
+    &:hover, &:active, &:focus{
+        color:@menu-hover-color;
+        text-decoration:none;
+    }
+}
+
+/*#region Слой логотипов*/
+.header-content {
+    background: url(../../Images/steel_textures1.jpg) no-repeat;
+    height: @header-height;
+    background-size: 100%;
+    position: relative;
+    background-color:transparent;
+    /*overflow:visible;*/
+}
+
+.header-content .top-logoimg {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.header-content .top-logoimg a {
+    height: 160px;
+    max-width: 451px;
+    display: block;
+    margin-left: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+}
+
+.header-content .top-logoimg a img {
+    height: 100%;
+    width: 100%;
+    box-shadow: 10px 10px 10px 0px rgb(8, 8, 8);
+}
+/*#endregion*/
+
+/*#region Слой контактных телефонов*/
+
+@line-width:10px;
+@phone-area-start-width:30%;
+@phone-area-height:100%;
+@phone-area-gradient-color-start:rgba(34, 30, 68,0.3);
+@phone-area-gradient-color-end:rgba(34, 30, 68,0.7);
+@phone-area-transition:all 0.25s ease-in-out;
+
+.top-logoimg-right{
+    height:100%;
+    overflow:no-display;
+}
+
+#right-phone-area {
+    letter-spacing:-1px;
+    height: @phone-area-height;
+    width: @phone-area-start-width;
+    min-width:300px;
+    /*gradient*/
+    background: -webkit-linear-gradient(left,@phone-area-gradient-color-start,@phone-area-gradient-color-end); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right,@phone-area-gradient-color-start,@phone-area-gradient-color-end); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right,@phone-area-gradient-color-start,@phone-area-gradient-color-end); /*Fx 3.6-15*/
+    background: linear-gradient(to right, @phone-area-gradient-color-start, @phone-area-gradient-color-end); /*Standard*/
+    position: absolute;
+    top: 0;
+    right:0;
+    transition: @phone-area-transition;
+    -webkit-transition: @phone-area-transition;
+    
+
+    &:hover{
+        width:100%;
+        border-top:1px solid rgba(0,255,255, 0.5);
+        border-bottom:1px solid rgba(0,255,255, 0.5);
+    }
+    &:hover a .start-text{
+        display:none;
+    }
+    &:hover a .phone-contacts{
+        display:block;
+    }
+}
+
+#right-phone-area:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 190px 50px 0 0;
+    border-color: transparent @phone-area-gradient-color-start transparent transparent;
+    left: -50px;
+    top: 0;
+    position: absolute;
+    opacity:1;
+    transition: @phone-area-transition;
+    -webkit-transition: @phone-area-transition;
+}
+
+
+#right-phone-area:hover:before {
+    content:'';
+    opacity:0;
+}
+
+#right-phone-area a {
+    font-size: 25px;
+    position: relative;
+    top:20%;
+    right:20%;
+    float:right;
+}
+
+#right-phone-area a .start-text, #right-phone-area a .phone-contacts{
+    position:relative;
+}
+
+
+#right-phone-area a .phone-contacts{
+    display:none;
+    font-size:22px;
+    color:@menu-hover-color;
+}
+
+
+@media(max-width: 768px) {
+    #right-phone-area{
+        display:none;
+    }
+}
+/*#endregion*/
